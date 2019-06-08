@@ -7,6 +7,7 @@ import co.com.nx.certificacion.task.OpenThebrowser;
 import co.com.nx.certificacion.task.Translate;
 import co.com.nx.certificacion.userinterfaces.GoogleAppsComponents;
 import co.com.nx.certificacion.userinterfaces.GoogleHomePage;
+import co.com.nx.certificacion.userinterfaces.GoogleTranslatePage;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -14,6 +15,9 @@ import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.containsText;
+import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class GoogleTranslateStepDefinitions {
 	
@@ -42,7 +46,7 @@ public class GoogleTranslateStepDefinitions {
 
 	@Then("^she should see the word (.*) in the screen$")
 	public void sheShouldSeeTheWordInTheScreen(String wordinspanish) throws Exception {
-	 
+		susan.should(seeThat(the(GoogleTranslatePage.TARGET_TEXT_AREA_RESULT),containsText(wordinspanish)));
 	}
 
 }

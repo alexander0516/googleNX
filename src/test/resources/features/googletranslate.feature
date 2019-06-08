@@ -13,3 +13,5 @@ Feature: Google Translate
     Examples:
     | wordinenglish  | wordinspanish |
     |    cheese      |  queso        |
+    |    table       |  mesa         |
+    
